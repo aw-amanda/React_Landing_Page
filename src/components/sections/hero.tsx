@@ -1,5 +1,5 @@
-import { Button } from "./utils/button"
-import Slider from "./utils/slider"
+import { Button } from "../ui/button"
+import Slider from "../ui/slider"
 import { useLenis } from "lenis/react"
 
 export const Hero = () => {

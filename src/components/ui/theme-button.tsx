@@ -7,17 +7,17 @@ export const ThemeButton = () => {
             <button
               onClick={toggleTheme}
               title="change theme mode"
-              className="text-heading-2 rounded-full p-2 border border-box-border hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="text-heading-2 rounded-full p-1 md:p-2 border border-box-border hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               aria-label={`Toggle ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
-              {theme === 'dark' ? (
+              {theme === 'light' ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5 md:w-6 md:h-6"
                 >
                   <path
                     strokeLinecap="round"
@@ -32,7 +32,7 @@ export const ThemeButton = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-5 h-5 md:w-6 md:h-6"
                 >
                   <path
                     strokeLinecap="round"

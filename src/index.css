@@ -36,18 +36,18 @@ html.dark {
   .text-style {
     color: rgb(var(--color-text-1));
     text-shadow: 0 0 1px rgb(var(--color-bg));
-    font-size: clamp(1em, 1.5em, 2em);
+    font-size: clamp(1rem, 3vw, 1.4rem);
   }
 
   .text-2-style {
     color: rgb(var(--color-text-2));
-    font-size: clamp(1rem, 1.5rem, 2rem);
+    font-size: clamp(1rem, 3vw, 1.4rem);
   }
 
   .h1-style {
     color: rgb(var(--color-heading-1));
     text-shadow: 0 1px 3px rgb(var(--color-text-shadow-1));
-    font-size: clamp(4em, 4.5em, 5em);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 600;
     padding: 5px;
   }
@@ -55,13 +55,13 @@ html.dark {
   .h2-style {
     color: rgb(var(--color-heading-2));
     text-shadow: 0 2px 4px rgb(var(--color-text-shadow-2));
-    font-size: clamp(3em, 3.5em, 4em);
+    font-size: clamp(1.85rem, 6vw, 2.2rem);
   }
 
   .h3-style {
     color: rgb(var(--color-heading-3));
     text-shadow: 2px 2px rgb(var(--color-text-shadow-2));
-    font-size: clamp(2em, 2.5em, 3em);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
   }
 
   .nav-style {
@@ -70,7 +70,7 @@ html.dark {
     border-bottom: 1px solid rgb(var(--color-border));
     color: rgb(var(--color-heading-3));
     text-shadow: 1px 0 rgb(var(--color-text-shadow-2));
-    font-size: clamp(1rem, 2rem, 2.5rem);
+    font-size: clamp(0.7rem, 3.3vw, 1.35rem);
   }
 
   .box-style {

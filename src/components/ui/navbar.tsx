@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import logo from '../assets/logo.png'
-import { Link } from './utils/link'
-import { ThemeButton } from './utils/theme-button'
+import logo from '../../assets/logo.png'
+import { Link } from './link'
+import { ThemeButton } from './theme-button'
 
 export const navItems = [
   { href: '#', text: 'Home' },
-  { href: '#about', text: 'About Us' },
+  { href: '#about', text: 'About' },
   { href: '#services', text: 'Services' },
   { href: '#contact', text: 'Contact' }
 ]
@@ -24,21 +24,19 @@ export const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center gap-3">
-              <img src={logo} alt="Logo" className="w-10 h-12" />
-              <span className="hidden sm:block">
-                Landscaping Services
-              </span>
+              <img src={logo} alt="Logo" className="w-10 h-12 md:w-12 md:h-14" />
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-5">
+          <div className="hidden md:flex items-center justify-evenly">
             <ul className="flex space-x-4">
               {navItems.map((item, key) => (
                 <Link href={item.href} text={item.text} key={key} />
               ))}
             </ul>
-            
+          </div>
+          <div className="hidden md:block">
             <ThemeButton />
           </div>
 
