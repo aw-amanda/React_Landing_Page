@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aw-amanda.github.io/React_Landing_Page/sitemap.xml
