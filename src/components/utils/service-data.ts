@@ -3,13 +3,15 @@ import CommercialLandscapingImage from "../../assets/CommercialLandscapingImage.
 
 interface ServiceItemProps {
   title: string
+  text: string
   items: string[]
   image: string
 }
 
 export const ServiceItems: ServiceItemProps[] = [
   { 
-    title: "Residential Landscaping Services | Complete Home Property Care", 
+    title: "Residential Landscaping Services in City and Surrounding Areas", 
+    text: "Proudly serving City and the surrounding areas in State, our functional and aesthetic landscaping services are available year-round. Whether your home or rental property needs regular maintenance, a one-time spruce, or a complete makeover, you can get in touch with us anytime. Ask us about:",
     items: [
       "Custom landscape design and installation: Tailored landscape designs matching your vision and property's unique characteristics, including native plant selection and sustainable garden planning",
       "Professional lawn maintenance programs: Comprehensive weekly mowing, trimming, edging, fertilization, and weed control for a pristine yard year-round",
@@ -21,7 +23,8 @@ export const ServiceItems: ServiceItemProps[] = [
     image: ResidentialLandscapingImage
   },
   {
-    title: "Commercial Landscaping Management | Corporate Property Maintenance",
+    title: "Commercial Landscaping Management and Design",
+    text: "Business and commercial property owners can benefit from our full-service maintenance services that are ADA-compliant and highly versatile, to match your needs no matter the season. From snow removal to floral design and everything in between, we are confident that we will provide the best landscaping services for your business. We offer:",
     items: [
       "Corporate campus landscaping: Create impressive first impressions for clients, employees, and visitors with professional grounds management and design",
       "Retail property beautification: High-visibility landscaping that attracts customers and enhances your brand image with seasonal color rotations",

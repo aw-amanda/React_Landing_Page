@@ -17,12 +17,6 @@ export const Services = () => {
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <h2 className="heading-2">Landscaping Services in City, State</h2>
           <div className="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-          <p className="body-text-large max-w-3xl mx-auto mt-6">
-            Proudly serving City and the surrounding areas in State, 
-            our functional and aesthetic landscaping services are available year-round. 
-            Whether your home or rental properties need maintenance or your business needs reliable 
-            snow removal, our experienced professionals are the best for the job.
-          </p>
         </div>
 
         {/* Services */}
@@ -42,12 +36,15 @@ export const Services = () => {
               <h3 className="heading-3 text-center mb-6 md:mb-8">
                 {service.title}
               </h3>
+
+              <p className="body-text leading-relaxed mb-8 md:mb-10">
+                {service.text}
+              </p>
               
-              <div className="space-y-6 md:space-y-8">
+              <div className="space-y-1">
                 {service.items.map((item, itemIndex) => (
                   <div 
                     key={`service-${index}-item-${itemIndex}`}
-                    className="bg-secondary/30 rounded-xl p-5 md:p-6"
                   >
                     <ListItemFormat text={item} />
                   </div>

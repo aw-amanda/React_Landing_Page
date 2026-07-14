@@ -7,7 +7,7 @@ interface AboutItem {
 
 export const AboutItems: AboutItem[] = [
     {
-        title: "Expert Residential Landscaping Services in City | 20+ Years Experience",
+        title: "Expert Residential Landscaping Services in City",
         text: "At Landscaping Services, we bring over 20 years of residential landscaping excellence to City homeowners. Our family-owned company takes pride in transforming ordinary yards into stunning outdoor retreats. As the leading landscaping company in City, we specialize in creating beautiful, sustainable landscapes that enhance your property's value and curb appeal. When you hire our professional landscapers, you'll enjoy:",
         items: [
             "Increased property value: Well-designed landscapes can boost home values by up to 15%, making landscaping one of the best investments for City homeowners",

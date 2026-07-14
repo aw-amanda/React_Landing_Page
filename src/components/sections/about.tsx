@@ -32,7 +32,6 @@ export const About = () => {
                                 {item.items.map((listItem, itemIndex) => (
                                     <div 
                                         key={`service-${index}-item-${itemIndex}`}
-                                        className="bg-primary/30 rounded-xl p-2"
                                     >
                                         <ListItemFormat text={listItem} />
                                     </div>

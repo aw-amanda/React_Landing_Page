@@ -3,7 +3,7 @@ export const ListItemFormat = ({ text }: { text: string }) => {
   return (
     <>
       {parts.length > 1 ? (
-        <div className="flex flex-col gap-1 sm:gap-2">
+        <div className="flex flex-col">
           <strong className="font-semibold text-text-primary text-base sm:text-lg">
             {parts[0]}
           </strong>
