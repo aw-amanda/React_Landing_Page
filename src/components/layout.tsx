@@ -13,17 +13,20 @@ export const Layout = ({ title, children }: LayoutProps) => {
   }, [title])
 
   return (
-    <div className="min-h-screen flex flex-col bg-primary">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 btn-primary">
+    <div className="min-h-dvh flex flex-col bg-primary text-primary">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] btn-primary shadow-elegant"
+      >
         Skip to main content
       </a>
-      
+
       <Navbar />
-      
-      <main id="main-content" className="flex-1 pt-16">
+
+      <main id="main-content" className="flex-1 pt-16 sm:pt-18">
         {children}
       </main>
-      
+
       <Footer />
     </div>
   )

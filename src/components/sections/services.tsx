@@ -1,75 +1,67 @@
-import { ServiceItems } from "../utils/service-data"
+import { ServiceItems } from "../../lib/data/service-data"
 import { Button } from "../ui/button"
-import { ListItemFormat } from "../ui/list-format" 
+import { ListItemFormat } from "../ui/list-format"
 import { useLenis } from "lenis/react"
+import { anchorScrollOptions } from "../../lib/utils/scroll"
 
 export const Services = () => {
   const lenis = useLenis()
 
+  const goToContact = () => {
+    lenis?.scrollTo("#contact", anchorScrollOptions)
+  }
+
   return (
-    <section 
+    <section
       id="services"
-      className="bg-primary section-padding"
-      aria-label="Services section"
+      aria-labelledby="services-heading"
+      className="bg-primary section-padding cv-auto"
     >
       <div className="container-responsive">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <h2 className="heading-2">Landscaping Services in City, State</h2>
-          <div className="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-        </div>
+        <header className="text-center mb-10 md:mb-14 lg:mb-18">
+          <h2 id="services-heading" className="heading-2">
+            Landscaping Services in City, State
+          </h2>
+          <div className="w-20 h-1 bg-[var(--color-accent)] mx-auto mt-4 rounded-full" aria-hidden="true" />
+        </header>
 
-        {/* Services */}
-        <div className="max-w-4xl mx-auto space-y-16 md:space-y-20 lg:space-y-24">
+        <div className="max-w-3xl mx-auto space-y-14 md:space-y-18 lg:space-y-22">
           {ServiceItems.map((service, index) => (
-            <div key={`service-${index}`} className="flex flex-col">
-              {/* Image */}
-              <div className="mb-6 md:mb-8 rounded-2xl overflow-hidden shadow-lg">
+            <article key={`service-${index}`} className="flex flex-col">
+              <figure className="mb-6 md:mb-8 rounded-2xl overflow-hidden shadow-elegant">
                 <img
                   src={service.image}
-                  alt={service.title}
-                  className="w-full h-64 md:h-80 lg:h-96 object-cover"
+                  alt={`${service.title} — example project`}
+                  className="w-full h-56 sm:h-64 md:h-80 lg:h-96 object-cover"
                   loading="lazy"
+                  decoding="async"
+                  width={1200}
+                  height={800}
                 />
-              </div>
-              
-              <h3 className="heading-3 text-center mb-6 md:mb-8">
-                {service.title}
-              </h3>
+              </figure>
 
-              <p className="body-text leading-relaxed mb-8 md:mb-10">
-                {service.text}
-              </p>
-              
-              <div className="space-y-1">
+              <h3 className="heading-3 text-center mb-5 md:mb-7">{service.title}</h3>
+
+              <p className="body-text leading-relaxed mb-6 md:mb-8">{service.text}</p>
+
+              <ul className="space-y-3" role="list">
                 {service.items.map((item, itemIndex) => (
-                  <div 
-                    key={`service-${index}-item-${itemIndex}`}
-                  >
+                  <li key={`service-${index}-item-${itemIndex}`}>
                     <ListItemFormat text={item} />
-                  </div>
+                  </li>
                 ))}
-              </div>
-              
-              {/* CTA */}
+              </ul>
+
               <div className="text-center mt-10 md:mt-12">
-                <Button 
-                  onClick={() => {
-                    if (lenis) {
-                      lenis.scrollTo("#contact", {
-                        duration: 1.5,
-                        easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                      })
-                    }
-                  }}
+                <Button
+                  onClick={goToContact}
                   variant="secondary"
-                  className="px-8 py-3"
                   aria-label={`Request a free quote for ${service.title}`}
                 >
                   Request a Free Quote
                 </Button>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

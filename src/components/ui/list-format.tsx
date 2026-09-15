@@ -1,19 +1,18 @@
 export const ListItemFormat = ({ text }: { text: string }) => {
-  const parts = text.split(': ')
+  const idx = text.indexOf(": ")
+  if (idx === -1) {
+    return <span className="body-text block">{text}</span>
+  }
+
+  const heading = text.slice(0, idx)
+  const body = text.slice(idx + 2)
+
   return (
-    <>
-      {parts.length > 1 ? (
-        <div className="flex flex-col">
-          <strong className="font-semibold text-text-primary text-base sm:text-lg">
-            {parts[0]}
-          </strong>
-          <span className="body-text text-sm sm:text-base">
-            {parts.slice(1).join(': ')}
-          </span>
-        </div>
-      ) : (
-        <span className="body-text">{text}</span>
-      )}
-    </>
+    <div className="flex flex-col gap-1">
+      <strong className="font-semibold text-primary text-base sm:text-[1.0625rem] leading-snug">
+        {heading}
+      </strong>
+      <span className="body-text">{body}</span>
+    </div>
   )
 }

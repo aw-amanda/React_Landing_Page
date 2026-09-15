@@ -1,69 +1,72 @@
-import { AboutItems } from "../utils/about-data"
+import { AboutItems } from "../../lib/data/about-data"
 import { ListItemFormat } from "../ui/list-format"
-import { AboutGridItems } from "../utils/about-grid-data"
+import { AboutGridItems } from "../../lib/data/about-grid-data"
 
 export const About = () => {
-    return(
-        <section 
-            id="about" 
-            className="bg-secondary section-padding"
-            aria-label="About section"
-        >
-            <div className="container-responsive">
-                {/* Header */}
-                <div className="text-center mb-12 md:mb-16 lg:mb-20">
-                    <h2 className="heading-2">About Landscaping Services</h2>
-                    <div className="w-20 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-                </div>
-                
-                {/* Content */}
-                <div className="max-w-4xl mx-auto space-y-16 md:space-y-20 lg:space-y-24">
-                    {AboutItems.map((item, index) => (
-                        <div key={`item-${index}`} className="flex flex-col">
-                            <h3 className="heading-3 text-center mb-6 md:mb-8">
-                                {item.title}
-                            </h3>
-                            
-                            <p className="body-text leading-relaxed mb-8 md:mb-10">
-                                {item.text}
-                            </p>
-                            
-                            <div className="space-y-1">
-                                {item.items.map((listItem, itemIndex) => (
-                                    <div 
-                                        key={`service-${index}-item-${itemIndex}`}
-                                    >
-                                        <ListItemFormat text={listItem} />
-                                    </div>
-                                ))}
-                            </div>
-                            
-                            <div className="mt-8 md:mt-10 bg-accent/10 border-l-4 border-accent p-4 md:p-6 rounded-r-xl">
-                                <p className="body-text font-medium italic">
-                                    "{item.cta}"
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                
-                {/* Gallery */}
-                <div className="mt-16 md:mt-20 lg:mt-24">
-                    <h3 className="heading-3 text-center mb-8 md:mb-12">Our Recent Projects</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                        {AboutGridItems.map((item, index) => (
-                            <div key={`item-${index}`} className="overflow-hidden rounded-xl shadow-lg">
-                                <img 
-                                    src={item.src}
-                                    alt={item.alt}
-                                    className={`w-full h-64 md:h-72 lg:h-80 object-cover ${item.className || ''}`}
-                                    loading="lazy"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="bg-secondary section-padding cv-auto"
+    >
+      <div className="container-responsive">
+        <header className="text-center mb-10 md:mb-14 lg:mb-18">
+          <h2 id="about-heading" className="heading-2">
+            About Landscaping Services
+          </h2>
+          <div className="w-20 h-1 bg-[var(--color-accent)] mx-auto mt-4 rounded-full" aria-hidden="true" />
+        </header>
+
+        <div className="max-w-3xl mx-auto space-y-14 md:space-y-18 lg:space-y-22">
+          {AboutItems.map((item, index) => (
+            <article key={`about-${index}`} className="flex flex-col">
+              <h3 className="heading-3 text-center mb-5 md:mb-7">{item.title}</h3>
+
+              <p className="body-text leading-relaxed mb-6 md:mb-8">{item.text}</p>
+
+              <ul className="space-y-3" role="list">
+                {item.items.map((listItem, itemIndex) => (
+                  <li key={`about-${index}-item-${itemIndex}`}>
+                    <ListItemFormat text={listItem} />
+                  </li>
+                ))}
+              </ul>
+
+              <aside className="mt-8 md:mt-10 bg-[var(--color-accent-soft)] border-l-4 border-[var(--color-accent)] p-4 md:p-5 rounded-r-xl">
+                <p className="body-text italic">"{item.cta}"</p>
+              </aside>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-14 md:mt-18 lg:mt-22">
+          <h3 className="heading-3 text-center mb-6 md:mb-10">Our Recent Projects</h3>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
+            {AboutGridItems.map((item, index) => {
+              const spanLg = item.className?.includes("col-span-2") && index % 2 === 0
+              return (
+                <figure
+                  key={`about-img-${index}`}
+                  className={[
+                    "overflow-hidden rounded-xl shadow-elegant",
+                    spanLg ? "lg:col-span-2" : "",
+                  ].join(" ")}
+                >
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover transition-transform duration-500 hover:scale-[1.03]"
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={600}
+                  />
+                </figure>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
 }
